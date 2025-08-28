@@ -1,0 +1,74 @@
+.genCitas{
+    max-width: 50dvh;
+}
+
+.container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+}
+
+.cita {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    position: relative;
+}
+
+.cita::before {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: -0.625rem;
+    left: 0.625rem;
+    line-height: 1;
+}
+
+.cita::after {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: -1.25rem;
+    right: 0.625rem;
+    line-height: 1;
+}
+
+.autor {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-align: right;
+    width: 100%;
+    padding-right: 1rem;
+}
+
+.autor::before {
+    content: '— ';
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-top: 0;
+    padding-bottom: 5rem;
+}

@@ -1,0 +1,83 @@
+.layout {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.mainAppTitle {
+    text-align: center;
+    margin-top: 12rem;
+}
+
+.headerContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(72, 83, 145, 0.1), rgba(0, 0, 0, 0.2) 50%,  rgba(99, 99, 99, 0.1));
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    min-height: 4rem;
+    max-height: 4rem;
+}
+
+.headerTitle{
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.headerSocial{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1rem;
+}
+
+.headerSocialLink {
+    color: rgba(255, 255, 255, 0.7);
+    transition: 
+        color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+}
+
+.headerSocialLink:hover {
+    box-shadow: 0 0 10px 2px #ffffff;
+    color: #fff;
+    transform: scale(1.13);
+}
+
+.linkedin {
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: 300;
+}

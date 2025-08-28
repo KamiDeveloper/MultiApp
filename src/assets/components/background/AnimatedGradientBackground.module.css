@@ -1,0 +1,154 @@
+:root {
+    /* Mismas variables de color */
+    --gradient-start: #000000;
+    --gradient-end: #130f12;
+    --blob1: #1d1f41;
+    --blob2: #2a0a11;
+    --blob3: #7a7c61;
+    
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--gradient-start);
+}
+
+.gradientBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    --x-offset: 0;
+    --y-offset: 0;
+}
+
+.colorBlob,
+.nebula,
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    /* 
+      La transformación ahora se calcula con calc() usando las variables CSS.
+      var(--x-offset) y var(--y-offset) se actualizan desde JS.
+      var(--parallax-factor) se define en el style de cada elemento.
+    */
+    transform: translate(calc(var(--x-offset) * var(--parallax-factor) * 1px), calc(var(--y-offset) * var(--parallax-factor) * 1px));
+    transition: transform 0.3s ease-out;
+}
+
+.colorBlob {
+    filter: blur(150px);
+    opacity: 0.6;
+    z-index: 1;
+    position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
+}
+
+.colorBlob::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%; /* Más pequeño que el padre */
+    height: 50%; /* Más pequeño que el padre */
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2); /* Un blanco translúcido */
+    border-radius: 50%;
+    filter: blur(50px); /* Menos blur para un centro más definido */
+    opacity: 1;
+}
+
+
+
+.particle {
+    background-color: rgba(255, 255, 255, 0.7);
+    filter: blur(1px);
+    z-index: 1;
+    transition-duration: 0.8s; /* Even slower for distant stars */
+    animation: twinkle 5s infinite alternate;
+}
+
+/* El resto del CSS (.blob1, .blob2, .content, @keyframes) permanece exactamente igual */
+
+.blob1 {
+    background-color: var(--blob1);
+    animation: move-blob-1 18s infinite alternate ease-in-out;
+    animation-delay: -2s;
+}
+
+.blob2 {
+    background-color: var(--blob2);
+    animation: move-blob-2 22s infinite alternate ease-in-out;
+    animation-delay: -5s;
+}
+
+.blob3 {
+    background-color: var(--blob3);
+    animation: move-blob-3 20s infinite alternate ease-in-out;
+}
+
+.nebula1 {
+    animation: move-nebula-1 40s infinite alternate ease-in-out;
+    animation-delay: -10s;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes move-blob-1 {
+    from {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    to {
+        transform: translate(400px, 300px) scale(1.2) rotate(120deg);
+    }
+}
+
+@keyframes move-blob-2 {
+    from {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    to {
+        transform: translate(-300px, -200px) scale(0.9) rotate(-80deg);
+    }
+}
+
+@keyframes move-blob-3 {
+    from {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    to {
+        transform: translate(-400px, 100px) scale(1.1) rotate(90deg);
+    }
+}
+
+@keyframes move-nebula-1 {
+    from {
+        /* La animación base ya no necesita el translate, se combina con el paralaje */
+        transform: scale(1);
+    }
+    to {
+        /* El translate de la animación se combina con el translate del paralaje */
+        transform: translate(-200px, 200px) scale(1.5);
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
