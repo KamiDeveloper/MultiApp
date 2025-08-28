@@ -1,5 +1,5 @@
+import BasicButton from '../../assets/buttons/BasicButton';
 import Styles from './CalImc.module.css'
-import BasicButton from '../../buttons/BasicButton'
 
 
 import React, { useState } from 'react';

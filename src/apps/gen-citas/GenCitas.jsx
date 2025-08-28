@@ -1,4 +1,4 @@
-import BasicButton from '../../buttons/BasicButton';
+import BasicButton from '../../assets/buttons/BasicButton';
 import Styles from './GenCitas.module.css'
 import { citas } from './citas';
 import { useState } from 'react';

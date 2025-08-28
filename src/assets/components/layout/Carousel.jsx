@@ -1,10 +1,10 @@
 
 import { useState } from 'react';
 import Styles from './Carousel.module.css';
-import GenCitas from '../../apps/gen-citas/GenCitas';
-import CalImc from '../../apps/cal-imc/CalImc';
 import { flechaDer, flechaIzq } from '../../icons/Icons';
-import ClimaApp from '../../apps/clima/ClimaApp';
+import ClimaApp from '../../../apps/clima/ClimaApp';
+import CalImc from '../../../apps/cal-imc/CalImc';
+import GenCitas from '../../../apps/gen-citas/GenCitas';
 
 const Carousel = () => {
     // Array de aplicaciones disponibles
