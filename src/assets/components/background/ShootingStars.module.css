@@ -2,8 +2,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     overflow: hidden;
     z-index: 1; /* Por encima del gradiente pero debajo del contenido */
 }

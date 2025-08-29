@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+:root{
+    max-width: 100dvw;
+    max-height: 100dvh;
+}
+
+@media (max-width: 768px) {
+
+    .body {
+        overflow: hidden;
+    }
+}

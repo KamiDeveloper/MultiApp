@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    background: linear-gradient(135deg, rgba(72, 83, 145, 0.1), rgba(99, 99, 99, 0.1));
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     max-width: 400px;
@@ -67,4 +67,39 @@
     grid-column: 1 / -1;
     font-size: 2em;
     background: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+    .weatherCard {
+        padding: 15px;
+    }
+
+    .weatherHeader {
+        font-size: 1.1em;
+    }
+
+    .weatherInfo {
+        grid-template-columns: 1fr;
+    }
+
+    .weatherItem {
+        padding: 8px;
+    }
+
+    .weatherLabel {
+        font-size: 0.7em;
+    }
+
+    .weatherValue {
+        font-size: 1em;
+    }
+
+    .temperature {
+        font-size: 1.5em;
+    }
+    .placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+        margin-top: 1rem;
+    }
 }

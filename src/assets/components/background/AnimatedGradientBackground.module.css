@@ -9,18 +9,21 @@
 }
 
 .container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
     background-color: var(--gradient-start);
+    overflow: hidden;
+    top: 0;
+    left: 0;
 }
 
 .gradientBackground {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    position: fixed;
+    width: 120dvw;
+    height: 120dvh;
+    top: -10dvh;
+    left: -10dvw;
     z-index: 0;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     --x-offset: 0;
@@ -42,8 +45,8 @@
 }
 
 .colorBlob {
-    filter: blur(150px);
-    opacity: 0.6;
+    filter: blur(100px);
+    opacity: 0.7;
     z-index: 1;
     position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
 }
@@ -104,6 +107,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .container {
+        position: fixed;
+        overflow: hidden;
+    }
+    
+    .gradientBackground {
+        position: fixed;
+        width: 150dvw;
+        height: 150dvh;
+        top: -25dvh;
+        left: -25dvw;
+    }
+    
+    .content {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .colorBlob,
+    .nebula,
+    .particle {
+        transform: translate(0, 0);
+        transition: transform 0.1s ease-out;
+    }
 }
 
 @keyframes move-blob-1 {

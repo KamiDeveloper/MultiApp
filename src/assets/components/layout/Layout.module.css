@@ -1,7 +1,8 @@
 .layout {
     position: relative;
     z-index: 10;
-    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: 100dvh;
     padding: 0 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
@@ -14,6 +15,7 @@
 }
 
 .headerContent {
+    width: 100dvw;
     position: fixed;
     top: 0;
     left: 0;
@@ -80,4 +82,17 @@
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
     font-weight: 300;
+}
+
+@media (max-width: 768px) {
+
+    .mainAppTitle {
+        margin-top: 6rem;
+}
+
+    .mainContent{
+        margin-top: 0dvh;
+        gap: 0rem;
+        height: 50dvh;
+    }
 }

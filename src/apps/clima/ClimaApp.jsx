@@ -52,7 +52,7 @@ const ClimaApp = () => {
                 </div>
             );
         }
-        return <div>Haz clic en el botón para obtener tu ubicación.</div>;
+        return <div className={Styles.placeholder}>Haz clic en el botón para obtener tu ubicación.</div>;
     };
 
     const renderWeatherInfo = () => {

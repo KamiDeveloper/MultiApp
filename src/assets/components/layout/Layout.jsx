@@ -26,7 +26,9 @@ const Layout = ({ children }) => {
                 <h1 className={Styles.title}>Multi App</h1>
                 <p className={Styles.subtitle}>Colección de mini aplicaciones</p>
             </div>
-            {children}
+            <main className={Styles.mainContent}>
+                {children}
+            </main>
         </div>
     );
 };

@@ -66,3 +66,15 @@
     margin-top: 0;
     padding-bottom: 5rem;
 }
+
+@media (max-width: 600px) {
+    .result {
+        max-width: 12rem;
+        font-size: 0.65em;
+        padding: 1rem;
+    }
+    .footer{
+        margin-bottom: -3.5rem;
+    }
+    
+}

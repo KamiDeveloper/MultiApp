@@ -1,7 +1,10 @@
 .Carousel {
     position: relative;
     z-index: 10;
-    min-height: 70vh;
+    min-height: 70dvh;
+    max-height: 70dvh;
+    min-width: 70dvh;
+    max-width: 70dvh;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -173,5 +176,161 @@ input {
 input:focus {
     outline: none;
     border-color: rgba(255, 255, 255, 0.5);
+}
 
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .Carousel {
+        
+        padding: 1rem;
+    }
+
+    .header {
+        margin-top: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .mainContent {
+        margin-top: -1rem;
+        gap: 1rem;
+    }
+
+    .carouselContainer {
+        width: 100%;
+        max-width: 100%;
+        gap: 1rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .appsContainer {
+        gap: 1rem;
+        padding-top: 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        width: 280px;
+    }
+
+    .appCard {
+        min-width: 280px;
+        max-width: 280px;
+        min-height: 18rem;
+        max-height: 18rem;
+        padding: 1.5rem;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .appTitle {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .placeholder {
+        min-height: 10rem;
+    }
+
+    .carouselButton {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .indicators {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    input {
+        max-width: 4rem;
+        padding: 0.8rem;
+        font-size: 1rem;
+        margin-left: 0.5rem;
+    }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+    .Carousel {
+        margin-top: 5rem;
+        padding: 0.5rem;
+        min-height: 70dvh;
+    max-height: 70dvh;
+    min-width: 70dvh;
+    max-width: 70dvh;
+    }
+
+    .header {
+        margin-top: 0.5rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .mainContent {
+        margin-top: 0;
+        gap: 1rem;
+    }
+
+    .appCard {
+        min-width: 280px;
+        max-width: 280px;
+        min-height: 16rem;
+        max-height: 16rem;
+        padding: 1rem;
+    }
+
+    .appTitle {
+        font-size: 1.2rem;
+    }
+
+    .carouselContainer {
+        gap: 0.3rem;
+        flex-direction: column;
+    }
+
+    .appsContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    input {
+        max-width: 3.5rem;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        margin-left: 0.3rem;
+    }
+    
 }

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Styles from './Carousel.module.css';
 import { flechaDer, flechaIzq } from '../../icons/Icons';
 import ClimaApp from '../../../apps/clima/ClimaApp';
@@ -33,23 +33,40 @@ const Carousel = () => {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const appsPerView = 2;
+
+    // Detectar si es móvil
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex + appsPerView;
+            const itemsToMove = isMobile ? 1 : appsPerView;
+            const newIndex = prevIndex + itemsToMove;
             return newIndex >= apps.length ? 0 : newIndex;
         });
     };
 
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex - appsPerView;
-            return newIndex < 0 ? Math.max(0, apps.length - appsPerView) : newIndex;
+            const itemsToMove = isMobile ? 1 : appsPerView;
+            const newIndex = prevIndex - itemsToMove;
+            return newIndex < 0 ? Math.max(0, apps.length - itemsToMove) : newIndex;
         });
     };
 
-    const visibleApps = apps.slice(currentIndex, currentIndex + appsPerView);
+    const visibleApps = isMobile ? 
+        apps.slice(currentIndex, currentIndex + 1) : 
+        apps.slice(currentIndex, currentIndex + appsPerView);
 
     return (
         <div className={Styles.Carousel}>
@@ -64,7 +81,9 @@ const Carousel = () => {
                         {flechaIzq()}
                     </button>
 
-                    <div className={Styles.appsContainer}>
+                    <div 
+                        className={Styles.appsContainer}
+                    >
                         {visibleApps.map((app) => (
                             <div key={app.id} className={Styles.appCard}>
                                 <h2 className={Styles.appTitle}>{app.title}</h2>
@@ -82,20 +101,20 @@ const Carousel = () => {
                     <button 
                         className={`${Styles.carouselButton} ${Styles.nextButton}`}
                         onClick={nextSlide}
-                        disabled={currentIndex + appsPerView >= apps.length}
+                        disabled={currentIndex + (isMobile ? 1 : appsPerView) >= apps.length}
                     >
                         {flechaDer()}
                     </button>
                 </div>
 
                 <div className={Styles.indicators}>
-                    {Array.from({ length: Math.ceil(apps.length / appsPerView) }).map((_, index) => (
+                    {Array.from({ length: Math.ceil(apps.length / (isMobile ? 1 : appsPerView)) }).map((_, index) => (
                         <button
                             key={index}
                             className={`${Styles.indicator} ${
-                                Math.floor(currentIndex / appsPerView) === index ? Styles.active : ''
+                                Math.floor(currentIndex / (isMobile ? 1 : appsPerView)) === index ? Styles.active : ''
                             }`}
-                            onClick={() => setCurrentIndex(index * appsPerView)}
+                            onClick={() => setCurrentIndex(index * (isMobile ? 1 : appsPerView))}
                         />
                     ))}
                 </div>

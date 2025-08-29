@@ -24,11 +24,11 @@ export const blobsConfig = [
 
 
 // Generación procedural de partículas
-export const particlesConfig = Array.from({ length: 50 }).map(() => {
-    const size = Math.random() * 3 + 1; // Tamaño entre 1px y 4px
+export const particlesConfig = Array.from({ length: 100 }).map(() => {
+    const size = Math.random() * 4 + 1; // Tamaño entre 1px y 5px
     return {
         type: 'particle',
-        parallaxFactor: Math.random() * 0.6 + 0.1, // Factor de paralaje variado
+        parallaxFactor: Math.random() * 2 + 0.1, // Factor de paralaje variado
         style: {
             width: `${size}px`,
             height: `${size}px`,
