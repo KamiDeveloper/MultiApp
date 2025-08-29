@@ -44,15 +44,8 @@ const ClimaApp = () => {
     const renderLocationInfo = () => {
         if (error) return <div style={{color: '#ff6b6b'}}>{error}</div>;
         if (loading) return <div>Obteniendo ubicación...</div>;
-        if (location) {
-            return (
-                <div className={Styles.weatherCard}>
-                    <div><b>Latitud:</b> {location.lat}</div>
-                    <div><b>Longitud:</b> {location.lon}</div>
-                </div>
-            );
-        }
-        return <div className={Styles.placeholder}>Haz clic en el botón para obtener tu ubicación.</div>;
+        // Removido: ya no mostramos las coordenadas
+        return null;
     };
 
     const renderWeatherInfo = () => {
@@ -114,11 +107,14 @@ const ClimaApp = () => {
     return (
         <div className={Styles.clima}>
             <div>
-                <BasicButton 
-                    text="Permitir ubicación" 
-                    onClick={getCurrentLocation}
-                    disabled={loading}
-                />
+                {/* Solo mostrar el botón si no tenemos ubicación y no hay error */}
+                {!location && !error && (
+                    <BasicButton 
+                        text="Permitir ubicación" 
+                        onClick={getCurrentLocation}
+                        disabled={loading}
+                    />
+                )}
                 {weather && (
                     <BasicButton 
                         text="Actualizar clima" 
@@ -127,6 +123,14 @@ const ClimaApp = () => {
                     />
                 )}
             </div>
+            
+            {/* Mostrar mensaje de placeholder solo si no hay ubicación, clima o error */}
+            {!location && !weather && !error && !loading && (
+                <div className={Styles.placeholder}>
+                    Haz clic en el botón para obtener tu ubicación.
+                </div>
+            )}
+            
             <div>
                 {renderLocationInfo()}
             </div>

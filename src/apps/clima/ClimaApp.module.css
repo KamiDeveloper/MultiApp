@@ -70,36 +70,101 @@
 }
 
 @media screen and (max-width: 600px) {
+    .clima {
+        padding: 10px;
+        max-width: 100%;
+    }
+
     .weatherCard {
-        padding: 15px;
+        padding: 10px;
+        margin: 8px 0;
     }
 
     .weatherHeader {
-        font-size: 1.1em;
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .weatherIcon {
+        width: 32px;
+        height: 32px;
     }
 
     .weatherInfo {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
     }
 
     .weatherItem {
-        padding: 8px;
+        padding: 6px;
     }
 
     .weatherLabel {
-        font-size: 0.7em;
+        font-size: 0.65em;
+        margin-bottom: 2px;
     }
 
     .weatherValue {
-        font-size: 1em;
+        font-size: 0.85em;
     }
 
     .temperature {
-        font-size: 1.5em;
+        font-size: 1.3em;
+        padding: 8px;
     }
+
     .placeholder {
         color: rgba(255, 255, 255, 0.7);
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+        font-size: 0.9em;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media screen and (max-width: 400px) {
+    .clima {
+        padding: 8px;
+    }
+
+    .weatherCard {
+        padding: 8px;
+        margin: 6px 0;
+    }
+
+    .weatherHeader {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+
+    .weatherIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .weatherInfo {
+        gap: 4px;
+    }
+
+    .weatherItem {
+        padding: 4px;
+    }
+
+    .weatherLabel {
+        font-size: 0.6em;
+    }
+
+    .weatherValue {
+        font-size: 0.8em;
+    }
+
+    .temperature {
+        font-size: 1.2em;
+        padding: 6px;
+    }
+
+    .placeholder {
+        font-size: 0.8em;
+        margin-top: 0.3rem;
     }
 }

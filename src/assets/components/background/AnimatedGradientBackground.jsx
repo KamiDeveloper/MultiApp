@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './AnimatedGradientBackground.module.css';
 import { blobsConfig, particlesConfig } from './backgroundElements.config.js';
 import ShootingStars from './ShootingStars.jsx';
@@ -13,7 +13,6 @@ const ParallaxElement = ({ element }) => {
 
 const AnimatedGradientBackground = ({ children }) => {
     const backgroundRef = useRef(null);
-    const [needsPermission, setNeedsPermission] = useState(false);
 
     useEffect(() => {
         const background = backgroundRef.current;
@@ -45,60 +44,34 @@ const AnimatedGradientBackground = ({ children }) => {
             updateParallax(xPercent, yPercent);
         };
 
-        // Manejo del acelerómetro para móviles
-        const handleDeviceOrientation = (event) => {
+        // Manejo del toque en pantalla para móviles
+        const handleTouch = (event) => {
             if (!isMobile) return; // Solo ejecutar en móviles
             
-            // Normalizar los valores del acelerómetro
-            // gamma: inclinación izquierda/derecha (-90 a 90)
-            // beta: inclinación adelante/atrás (-180 a 180)
-            const gamma = event.gamma || 0;
-            const beta = event.beta || 0;
-            
-            // Convertir a porcentajes más suaves
-            const xPercent = Math.max(-1, Math.min(1, gamma / 45)) * -0.5;
-            const yPercent = Math.max(-1, Math.min(1, (beta - 90) / 45)) * -0.5;
+            const touch = event.touches[0] || event.changedTouches[0];
+            if (!touch) return;
+
+            const { clientX, clientY } = touch;
+            const { innerWidth, innerHeight } = window;
+
+            const xPercent = (clientX / innerWidth - 0.5) * -1;
+            const yPercent = (clientY / innerHeight - 0.5) * -1;
 
             updateParallax(xPercent, yPercent);
         };
 
-        // Función para solicitar permisos en iOS
-        const requestOrientationPermission = async () => {
-            if (isMobile && typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-                try {
-                    const permission = await DeviceOrientationEvent.requestPermission();
-                    if (permission === 'granted') {
-                        window.addEventListener('deviceorientation', handleDeviceOrientation);
-                        setNeedsPermission(false);
-                    }
-                } catch (error) {
-                    console.log('Error solicitando permisos de orientación:', error);
-                    setNeedsPermission(true);
-                }
-            } else if (isMobile) {
-                // Para Android y otros dispositivos que no requieren permisos
-                window.addEventListener('deviceorientation', handleDeviceOrientation);
-            }
-        };
-
         // Configurar event listeners
         if (isMobile) {
-            // Verificar si necesitamos solicitar permisos (iOS 13+)
-            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-                setNeedsPermission(true);
-            } else {
-                requestOrientationPermission();
-            }
+            window.addEventListener('touchstart', handleTouch);
+            window.addEventListener('touchmove', handleTouch);
         } else {
             window.addEventListener('mousemove', handleMouseMove);
         }
 
-        // Hacer la función disponible globalmente para el botón
-        window.requestOrientationPermission = requestOrientationPermission;
-
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('deviceorientation', handleDeviceOrientation);
+            window.removeEventListener('touchstart', handleTouch);
+            window.removeEventListener('touchmove', handleTouch);
             cancelAnimationFrame(animationFrameId);
         };
     }, []);
@@ -118,26 +91,6 @@ const AnimatedGradientBackground = ({ children }) => {
                     return <ParallaxElement key={index} element={{ ...element, style: elementStyle }} />;
                 })}
             </div>
-
-            {needsPermission && (
-                <button 
-                    onClick={() => window.requestOrientationPermission()}
-                    style={{
-                        position: 'fixed',
-                        top: '20px',
-                        right: '20px',
-                        zIndex: 1000,
-                        padding: '10px 15px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                        border: 'none',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                        fontSize: '12px'
-                    }}
-                >
-                    Activar parallax con movimiento
-                </button>
-            )}
 
             <div className={styles.content}>{children}</div>
         </div>
