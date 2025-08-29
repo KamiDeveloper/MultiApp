@@ -92,11 +92,6 @@ const ClimaApp = () => {
                             <div className={Styles.weatherLabel}>Sensación térmica</div>
                             <div className={Styles.weatherValue}>{Math.round(weather.main.feels_like)}°C</div>
                         </div>
-                        
-                        <div className={Styles.weatherItem}>
-                            <div className={Styles.weatherLabel}>Presión</div>
-                            <div className={Styles.weatherValue}>{weather.main.pressure} hPa</div>
-                        </div>
                     </div>
                 </div>
             );
