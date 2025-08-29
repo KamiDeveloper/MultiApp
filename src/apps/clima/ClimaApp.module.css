@@ -71,100 +71,100 @@
 
 @media screen and (max-width: 600px) {
     .clima {
-        padding: 10px;
+        padding: 5px;
         max-width: 100%;
     }
 
     .weatherCard {
-        padding: 10px;
-        margin: 8px 0;
+        padding: 5px;
+        margin: 4px 0;
     }
 
     .weatherHeader {
-        font-size: 1em;
-        margin-bottom: 8px;
+        font-size: 0.5em;
+        margin-bottom: 4px;
     }
 
     .weatherIcon {
-        width: 32px;
-        height: 32px;
+        width: 16px;
+        height: 16px;
     }
 
     .weatherInfo {
         grid-template-columns: 1fr 1fr;
-        gap: 6px;
+        gap: 3px;
     }
 
     .weatherItem {
-        padding: 6px;
+        padding: 3px;
     }
 
     .weatherLabel {
-        font-size: 0.65em;
-        margin-bottom: 2px;
+        font-size: 0.4em;
+        margin-bottom: 1px;
     }
 
     .weatherValue {
-        font-size: 0.85em;
+        font-size: 0.425em;
     }
 
     .temperature {
-        font-size: 1.3em;
-        padding: 8px;
+        font-size: 0.65em;
+        padding: 4px;
     }
 
     .placeholder {
         color: rgba(255, 255, 255, 0.7);
         text-align: center;
-        margin-top: 0.5rem;
-        font-size: 0.9em;
+        margin-top: 0.25rem;
+        font-size: 0.45em;
     }
 }
 
 /* Para pantallas muy pequeñas */
 @media screen and (max-width: 400px) {
     .clima {
-        padding: 8px;
-    }
-
-    .weatherCard {
-        padding: 8px;
-        margin: 6px 0;
-    }
-
-    .weatherHeader {
-        font-size: 0.9em;
-        margin-bottom: 6px;
-    }
-
-    .weatherIcon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .weatherInfo {
-        gap: 4px;
-    }
-
-    .weatherItem {
         padding: 4px;
     }
 
+    .weatherCard {
+        padding: 4px;
+        margin: 3px 0;
+    }
+
+    .weatherHeader {
+        font-size: 0.45em;
+        margin-bottom: 3px;
+    }
+
+    .weatherIcon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .weatherInfo {
+        gap: 2px;
+    }
+
+    .weatherItem {
+        padding: 2px;
+    }
+
     .weatherLabel {
-        font-size: 0.6em;
+        font-size: 0.3em;
     }
 
     .weatherValue {
-        font-size: 0.8em;
+        font-size: 0.4em;
     }
 
     .temperature {
-        font-size: 1.2em;
-        padding: 6px;
+        font-size: 0.6em;
+        padding: 3px;
     }
 
     .placeholder {
-        font-size: 0.8em;
-        margin-top: 0.3rem;
+        font-size: 0.4em;
+        margin-top: 0.15rem;
     }
 }

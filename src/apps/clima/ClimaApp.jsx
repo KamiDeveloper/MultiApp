@@ -11,31 +11,31 @@ const ClimaApp = () => {
     const getWeatherIcon = (weatherCode, isDay = true) => {
         const iconMap = {
             // Cielo despejado
-            '01d': 'sunny.svg',
-            '01n': 'moon.svg',
+            '01d': 'day.svg',
+            '01n': 'night.svg',
             // Pocas nubes
-            '02d': 'partly-cloudy.svg',
-            '02n': 'partly-cloudy-night.svg',
+            '02d': 'cloudy-day-1.svg',
+            '02n': 'cloudy-night-1.svg',
             // Nubes dispersas / rotas
-            '03d': 'cloudy.svg',
-            '03n': 'cloudy.svg',
-            '04d': 'overcast.svg',
-            '04n': 'overcast.svg',
+            '03d': 'cloudy-day-2.svg',
+            '03n': 'cloudy-night-2.svg',
+            '04d': 'cloudy-day-3.svg',
+            '04n': 'cloudy-night-3.svg',
             // Lluvia ligera
-            '09d': 'drizzle.svg',
-            '09n': 'drizzle.svg',
+            '09d': 'rainy-1.svg',
+            '09n': 'rainy-4.svg',
             // Lluvia
-            '10d': 'rainy.svg',
-            '10n': 'rainy-night.svg',
+            '10d': 'rainy-2.svg',
+            '10n': 'rainy-4.svg',
             // Tormenta
-            '11d': 'thunderstorm.svg',
-            '11n': 'thunderstorm.svg',
+            '11d': 'rainy-5.svg',
+            '11n': 'rainy-6.svg',
             // Nieve
-            '13d': 'snowy.svg',
-            '13n': 'snowy.svg',
+            '13d': 'snowy-4.svg',
+            '13n': 'snowy-5.svg',
             // Niebla
-            '50d': 'foggy.svg',
-            '50n': 'foggy.svg'
+            '50d': 'cloudy.svg',
+            '50n': 'cloudy.svg'
         };
 
         return iconMap[weatherCode] || 'default.svg';
@@ -58,7 +58,7 @@ const ClimaApp = () => {
                 <div className={Styles.weatherCard}>
                     <div className={Styles.weatherHeader}>
                         <img 
-                            src={`/src/assets/icons/weatherIcons/${iconName}`}
+                            src={`src/assets/icons/weatherIcons/${iconName}`}
                             alt={weather.weather[0].description}
                             className={Styles.weatherIcon}
                         />

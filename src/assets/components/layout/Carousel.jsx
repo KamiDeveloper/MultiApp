@@ -5,19 +5,21 @@ import { flechaDer, flechaIzq } from '../../icons/Icons';
 import ClimaApp from '../../../apps/clima/ClimaApp';
 import CalImc from '../../../apps/cal-imc/CalImc';
 import GenCitas from '../../../apps/gen-citas/GenCitas';
+import ShowIcons from '../../../apps/showIcons/ShowIcons';
 
 const Carousel = () => {
     // Array de aplicaciones disponibles
     const apps = [
         {
             id: 1,
-            title: "Aplicación del Clima",
-            component: ClimaApp
+            title: "Calculadora de IMC",
+            component: CalImc
+            
         },
         {
             id: 2,
-            title: "Calculadora de IMC",
-            component: CalImc
+            title: "Aplicación del Clima",
+            component: ClimaApp
         },
         {
             id: 3,
@@ -27,6 +29,12 @@ const Carousel = () => {
         {
             id: 4,
             title: "Calculadora Básica",
+            component: null,
+            placeholder: true
+        },
+        {
+            id: 5,
+            title: "Próximamente...",
             component: null,
             placeholder: true
         }
