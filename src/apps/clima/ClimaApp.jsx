@@ -38,7 +38,7 @@ const ClimaApp = () => {
             '50n': 'cloudy.svg'
         };
 
-        return iconMap[weatherCode] || 'default.svg';
+        return iconMap[weatherCode] || 'day.svg';
     };
 
     const renderLocationInfo = () => {
@@ -58,7 +58,7 @@ const ClimaApp = () => {
                 <div className={Styles.weatherCard}>
                     <div className={Styles.weatherHeader}>
                         <img 
-                            src={`src/assets/icons/weatherIcons/${iconName}`}
+                            src={`/weatherIcons/${iconName}`}
                             alt={weather.weather[0].description}
                             className={Styles.weatherIcon}
                         />

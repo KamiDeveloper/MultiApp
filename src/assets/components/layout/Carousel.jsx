@@ -5,7 +5,6 @@ import { flechaDer, flechaIzq } from '../../icons/Icons';
 import ClimaApp from '../../../apps/clima/ClimaApp';
 import CalImc from '../../../apps/cal-imc/CalImc';
 import GenCitas from '../../../apps/gen-citas/GenCitas';
-import ShowIcons from '../../../apps/showIcons/ShowIcons';
 
 const Carousel = () => {
     // Array de aplicaciones disponibles
