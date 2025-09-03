@@ -19,7 +19,7 @@ const AnimatedGradientBackground = ({ children }) => {
         if (!background) return;
 
         let animationFrameId;
-        let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        let isMobile = /webOS|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         // Función para actualizar el parallax
         const updateParallax = (xPercent, yPercent) => {

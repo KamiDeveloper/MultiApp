@@ -147,7 +147,7 @@
     }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) and (orientation: portrait) {
+@media screen and (max-height: 719px) and (orientation: landscape) {
 
     .calcContainer {
         width: 90%;

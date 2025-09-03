@@ -169,7 +169,7 @@
     }
 }
 
-@media screen and (max-width: 950px) and (orientation: landscape) {
+@media screen and (max-height: 719px) and (orientation: landscape) {
     .clima {
         padding: 4px;
     }

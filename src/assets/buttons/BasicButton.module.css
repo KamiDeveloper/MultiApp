@@ -13,7 +13,7 @@
 }
 
 
-@media (max-width: 932px) and (orientation: landscape) {
+@media screen and (max-height: 719px) and (orientation: landscape) {
     .basicButton{
         padding: 0.2rem 0.5rem;
         font-size: 0.7rem;

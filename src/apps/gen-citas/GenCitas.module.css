@@ -100,7 +100,7 @@
     }
 }
 
-@media (max-width: 950px) and (orientation: landscape) {
+@media screen and (max-height: 719px) and (orientation: landscape) {
     .genCitas {
         min-width: 112%;
         margin-left: -1rem;

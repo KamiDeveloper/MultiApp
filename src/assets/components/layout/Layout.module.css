@@ -97,7 +97,7 @@
     }
 }
 
-@media (max-width: 932px) and (orientation: landscape) {
+@media screen and (max-height: 719px) and (orientation: landscape) {
 
     .layout {
     position: relative;
