@@ -67,14 +67,27 @@
     padding-bottom: 5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .result {
         max-width: 12rem;
         font-size: 0.65em;
         padding: 1rem;
     }
     .footer{
-        margin-bottom: -3.5rem;
+        padding-bottom: 1.5rem;
     }
     
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+    .result {
+        align-items: center;
+        max-width: 10rem;
+        font-size: 0.6em;
+        padding: 0.8rem;
+        line-height: 1.2;
+    }
+    .footer{
+        padding-bottom: 1rem;
+    }
 }

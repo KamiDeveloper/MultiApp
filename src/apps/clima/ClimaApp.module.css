@@ -168,3 +168,50 @@
         margin-top: 0.15rem;
     }
 }
+
+@media screen and (max-width: 950px) and (orientation: landscape) {
+    .clima {
+        padding: 4px;
+    }
+
+    .weatherCard {
+        padding: 4px;
+        margin: 3px 0;
+    }
+
+    .weatherHeader {
+        font-size: 0.45em;
+        margin-bottom: 3px;
+    }
+
+    .weatherIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .weatherInfo {
+        gap: 2px;
+    }
+
+    .weatherItem {
+        padding: 2px;
+    }
+
+    .weatherLabel {
+        font-size: 0.3em;
+    }
+
+    .weatherValue {
+        font-size: 0.4em;
+    }
+
+    .temperature {
+        font-size: 0.6em;
+        padding: 3px;
+    }
+
+    .placeholder {
+        font-size: 0.4em;
+        margin-top: 0.15rem;
+    }
+}

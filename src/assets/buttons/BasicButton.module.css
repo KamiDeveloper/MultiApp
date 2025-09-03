@@ -12,3 +12,10 @@
     background-color: #fff3;;
 }
 
+
+@media (max-width: 932px) and (orientation: landscape) {
+    .basicButton{
+        padding: 0.2rem 0.5rem;
+        font-size: 0.7rem;
+    }
+}

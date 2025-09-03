@@ -109,3 +109,147 @@
 .calcButtonsRight .calcButtonC:active {
     background: rgba(40, 15, 10, var(--button-bg-active));
 }
+
+/* Media Queries para diseño responsive */
+
+@media (max-width: 932px) and (orientation: landscape)  {
+
+    .calcContainer {
+        width: 71%;
+        height: 75%;
+    }
+    
+    .calcScreen {
+        font-size: 1rem;
+        padding: 0.1rem 0.8rem;
+    }
+
+    .calcButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    
+}
+    
+    .calcButton  {
+        border-radius: 3px;
+        width: 1.4rem;
+        height: 1.4rem;
+        font-size: 1rem;
+    }
+    
+    .calcButtonZero {
+        width: 3rem;
+    }
+    
+    .calcButtonEqual {
+        height: 3rem;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) and (orientation: portrait) {
+
+    .calcContainer {
+        width: 90%;
+        height: 75%;
+    }
+
+    .calcButton {
+        border-radius: 3px;
+        width: 2.5rem;
+        height: 2.5em;
+        font-size: 1rem;
+    }
+    
+    .calcButtonZero {
+        width: 5.2rem;
+    }
+    
+    .calcButtonEqual {
+        height: 5.2rem;
+    }
+
+}
+/* Tablets */
+@media (max-width: 768px) {
+    .calcContainer {
+        width: 71%;
+        height: 75%;
+    }
+    
+    .calcScreen {
+        font-size: 1.8rem;
+        padding: 0.1rem 0.8rem;
+    }
+    
+    .calcButton {
+        border-radius: 3px;
+        width: 1.7rem;
+        height: 1.7rem;
+        font-size: 1rem;
+    }
+    
+    .calcButtonZero {
+        width: 3.6rem;
+    }
+    
+    .calcButtonEqual {
+        height: 3.6rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .calcContainer {
+        width: 71%;
+        height: 75%;
+    }
+    
+    .calcScreen {
+        font-size: 1.8rem;
+        padding: 0.1rem 0.8rem;
+    }
+    
+    .calcButton {
+        border-radius: 3px;
+        width: 1.7rem;
+        height: 1.7rem;
+        font-size: 1rem;
+    }
+    
+    .calcButtonZero {
+        width: 3.6rem;
+    }
+    
+    .calcButtonEqual {
+        height: 3.6rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 320px) {
+    .calcContainer {
+        width: 95%;
+        height: 65%;
+    }
+    
+    .calcScreen {
+        font-size: 1.3rem;
+        padding: 0.15rem 0.6rem;
+    }
+    
+    .calcButton {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1rem;
+        margin: 0.06rem;
+    }
+    
+    .calcButtonZero {
+        width: 3.72rem;
+    }
+    
+    .calcButtonEqual {
+        height: 3.72rem;
+    }
+}
