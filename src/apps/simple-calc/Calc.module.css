@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'CalcFont';
+    src: url('/fonts/Calculator.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --button-bg: 0.4;
+    --button-bg-hover: 0.6;
+    --button-bg-active: 0.8;
+}
+
+.calc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calcContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 80%;
+    width: 60%;
+    background: linear-gradient(to bottom, rgba(72, 83, 145, 0.1), rgba(99, 99, 99, 0.1));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding-bottom: 0.5rem;
+}
+
+.calcHeader {
+    position: fixed;
+    top: 0.5rem;
+    width: 90%;
+}
+
+.calcScreen {
+    font-family: 'CalcFont', sans-serif;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    text-align: end;
+}
+
+.calcButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    
+}
+
+.calcButton {
+    background: rgba(0, 0, 0, var(--button-bg));
+    border-radius: 5px;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: background 0.1s ease;
+    margin: 0.1rem;
+}
+
+.calcButton:hover {
+    background: rgba(0, 0, 0, var(--button-bg-hover));
+}
+
+.calcButton:active {
+    background: rgba(0, 0, 0, var(--button-bg-active));
+}
+.calcButtonsRow{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.calcButtonZero{
+    width: 6.2rem;
+}
+
+.calcButtonsRight{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.calcButtonsRight .calcButton{
+    background: rgba(10, 15, 40, var(--button-bg));
+}
+
+.calcButtonsRight .calcButton:hover{
+    background: rgba(10, 15, 40, var(--button-bg-hover));
+}
+.calcButtonsRight .calcButton:active{
+    background: rgba(10, 15, 40, var(--button-bg-active));
+}
+.calcButtonEqual{
+    grid-row: span 2;
+    height: 6.2rem;
+}
+
+.calcButtonsRight .calcButtonC {
+    background: rgba(40, 15, 10, var(--button-bg));
+}
+.calcButtonsRight .calcButtonC:hover {
+    background: rgba(40, 15, 10, var(--button-bg-hover));
+}
+.calcButtonsRight .calcButtonC:active {
+    background: rgba(40, 15, 10, var(--button-bg-active));
+}
